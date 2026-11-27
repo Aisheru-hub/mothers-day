@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b1b17">
+  <meta name="description" content="Поздравление для мамы Иры ко Дню матери и отрывок из «Реальных пацанов».">
+  <title>Мам, это тебе!</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <header class="bar wrap" id="top">
+    <a class="wordmark" href="#top"><span class="lamp" aria-hidden="true"></span> Для мамы Иры</a>
+    <nav aria-label="По странице">
+      <a href="#surprise">Видео</a>
+      <a href="#letter">Поздравление</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="greeting">
+      <div class="hero-copy">
+        <p class="eyebrow">Спецвыпуск ко Дню матери</p>
+        <h1 id="greeting">Мам,<br><em>это тебе!</em></h1>
+        <p class="intro">Мы сделали для тебя букет из лент и выбрали одну сцену из «Реальных пацанов». Включи телевизор, чтобы её увидеть.</p>
+        <button class="power-link" type="button" data-power aria-controls="screen" hidden>
+          <span class="power-icon" aria-hidden="true"></span> Включить телевизор
+        </button>
+        <noscript><a class="power-link" href="video.mp4">Смотреть видео</a></noscript>
+      </div>
+      <figure class="tv-scene" id="television" data-phase="off">
+        <div class="set">
+          <div class="antenna" aria-hidden="true"><i></i><i></i></div>
+          <div class="cabinet">
+            <div class="cabinet-top" aria-hidden="true"></div>
+            <div class="cabinet-side" aria-hidden="true"></div>
+            <div class="cabinet-front">
+              <div class="screen-rim">
+                <div class="screen" id="screen">
+                  <div class="program" aria-hidden="true">
+                    <img src="courtyard.webp" alt="" width="1536" height="1024">
+                    <span class="channel"><span class="lamp"></span> Канал «Мама»</span>
+                    <span class="program-title">Реальные<br>пацаны</span>
+                  </div>
+                  <div class="static" aria-hidden="true"></div>
+                  <div class="glass" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="console">
+                <span class="speaker" aria-hidden="true"></span>
+                <button class="knob" type="button" data-power aria-controls="screen" aria-label="Включить телевизор" hidden>
+                  <span class="power-icon" aria-hidden="true"></span>
+                </button>
+                <span class="power-light" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="remote-slot">
+          <div class="remote" hidden>
+            <div class="remote-details" aria-hidden="true"><i></i><i></i><i></i></div>
+            <a class="remote-start" href="video.mp4" aria-controls="tv-theater"><span class="play" aria-hidden="true"></span> Пуск</a>
+            <div class="remote-grip" aria-hidden="true"></div>
+          </div>
+        </div>
+        <figcaption class="screen-reader" role="status" id="tv-status"></figcaption>
+      </figure>
+    </section>
+    <section class="bouquet-video" id="surprise" aria-labelledby="video-title">
+      <div class="bouquet-inner wrap">
+        <div>
+          <h2 id="video-title">Видео к букету</h2>
+          <p>Увидели эту сцену из «Реальных пацанов» и сразу подумали о тебе.</p>
+          <a href="video.mp4" class="power-link video-link" data-watch>
+            <span class="play" aria-hidden="true"></span> Смотреть видео
+          </a>
+        </div>
+        <a class="bouquet-poster" href="video.mp4" data-watch aria-label="Воспроизвести сцену из «Реальных пацанов»">
+          <img src="poster.webp" width="960" height="540" alt="" loading="lazy">
+          <span class="bouquet-play" aria-hidden="true"><span class="play"></span></span>
+        </a>
+      </div>
+    </section>
+    <section class="wall" id="letter" aria-labelledby="letter-title">
+      <article class="notice">
+        <picture class="notice-art">
+          <source media="(max-width: 680px)" srcset="notice-mobile.webp" width="960" height="1440">
+          <img src="notice.webp" width="1360" height="1157" alt="" loading="lazy">
+        </picture>
+        <div class="notice-sheet">
+          <h2 id="letter-title">Мам, с Днём<br>матери!</h2>
+          <p>Спасибо, что ты рядом. С тобой можно и посмеяться от души, и поговорить о важном. Пусть у тебя будет побольше дней, когда можно выдохнуть, заняться любимым делом и порадоваться чему-нибудь простому.</p>
+          <p class="signature">Крепко обнимаем!</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="wrap"><a href="#top">Наверх <span aria-hidden="true">↑</span></a></footer>
+  <dialog class="theater" id="theater" aria-label="Видео из «Реальных пацанов»">
+    <button class="close" type="button" data-close aria-label="Закрыть видео">×</button>
+    <video controls playsinline preload="none" poster="poster.webp" src="video.mp4"></video>
+    <p class="media-error" hidden>Видео не удалось воспроизвести. <a href="video.mp4">Открыть файл</a></p>
+  </dialog>
+  <dialog class="tv-theater" id="tv-theater" aria-label="Видео на экране телевизора">
+    <div class="camera-frame"></div>
+    <button class="close tv-close" type="button" data-tv-close aria-label="Закрыть телевизор">×</button>
+    <video class="tv-video" aria-label="Сцена из «Реальных пацанов»" playsinline preload="none" src="tv-video.mp4"></video>
+    <p class="tv-error" hidden>Видео на телевизоре не загрузилось. <a href="video.mp4">Открыть видео</a></p>
+  </dialog>
+</body>
+</html>
